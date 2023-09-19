@@ -194,7 +194,8 @@ func (or *OplogReader) EnsureNetwork() (err error) {
 	}
 
 	findOptions := options.Find().SetBatchSize(int32(BatchSize)).
-		SetNoCursorTimeout(true).
+		//不开启noCursorTimeout
+		//SetNoCursorTimeout(true).
 		SetCursorType(options.Tailable).
 		SetOplogReplay(true)
 
